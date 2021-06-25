@@ -1,0 +1,10 @@
+<label for="title">Todo: </label>
+<input name="title" [(ngModel)]="title">
+<button (click)="onSubmit()">Submit</button>
+
+<ul>
+  <li *ngFor="let todo of todoService.getTodos()">
+    {{todo}}
+    <button (click)="todoService.deleteTodo(todo)">X</button>
+  </li>
+</ul>
